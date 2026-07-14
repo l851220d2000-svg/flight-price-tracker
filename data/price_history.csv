@@ -69,3 +69,22 @@ query_date,airline,outbound_departure,outbound_arrival,outbound_duration,outboun
 2026-07-14,"EVA Air, Philippine Airlines","8:30 PM on Thu, Dec 17","12:50 PM on Fri, Dec 18",15 hr 20 min,1,$1977,False,typical
 2026-07-14,"China Airlines, Korean Air","7:50 AM on Thu, Dec 17","3:55 PM on Thu, Dec 17",7 hr 5 min,1,$2150,False,typical
 2026-07-14,"China Airlines, China Eastern","8:45 AM on Thu, Dec 17","8:55 PM on Thu, Dec 17",11 hr 10 min,1,Price unavailable,False,typical
+2026-07-15,China Airlines,"2:25 PM on Thu, Dec 17","6:30 PM on Thu, Dec 17",3 hr 5 min,0,$424,False,typical
+2026-07-15,China Airlines,"4:25 PM on Thu, Dec 17","8:30 PM on Thu, Dec 17",3 hr 5 min,0,$424,False,typical
+2026-07-15,China Airlines,"12:35 PM on Thu, Dec 17","4:35 PM on Thu, Dec 17",3 hr,0,$432,False,typical
+2026-07-15,EVA Air,"3:20 PM on Thu, Dec 17","7:20 PM on Thu, Dec 17",3 hr,0,$436,False,typical
+2026-07-15,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,$488,False,typical
+2026-07-15,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,$488,False,typical
+2026-07-15,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,$492,False,typical
+2026-07-15,"EVA Air, JAL","6:30 AM on Thu, Dec 17","4:00 PM on Thu, Dec 17",8 hr 30 min,1,$652,False,typical
+2026-07-15,"China Airlines, JAL","7:40 AM on Thu, Dec 17","3:50 PM on Thu, Dec 17",7 hr 10 min,1,$658,False,typical
+2026-07-15,"EVA Air, JAL","8:20 AM on Thu, Dec 17","4:00 PM on Fri, Dec 18",30 hr 40 min,1,$658,False,typical
+2026-07-15,"EVA Air, ANA","6:30 AM on Thu, Dec 17","3:30 PM on Thu, Dec 17",8 hr,1,$663,False,typical
+2026-07-15,"EVA Air, ANA","8:20 AM on Thu, Dec 17","3:30 PM on Fri, Dec 18",30 hr 10 min,1,$669,False,typical
+2026-07-15,"China Airlines, ANA","7:40 AM on Thu, Dec 17","3:20 PM on Thu, Dec 17",6 hr 40 min,1,$683,False,typical
+2026-07-15,"EVA Air, JAL","1:30 PM on Thu, Dec 17","4:00 PM on Fri, Dec 18",25 hr 30 min,1,$691,False,typical
+2026-07-15,"EVA Air, ANA","1:30 PM on Thu, Dec 17","3:30 PM on Fri, Dec 18",25 hr,1,$702,False,typical
+2026-07-15,"China Airlines, Philippine Airlines","7:35 AM on Thu, Dec 17","8:00 PM on Thu, Dec 17",11 hr 25 min,1,$995,False,typical
+2026-07-15,"China Airlines, China Southern","2:05 PM on Thu, Dec 17","1:15 PM on Fri, Dec 18",22 hr 10 min,1,$1131,False,typical
+2026-07-15,"China Airlines, Korean Air","7:50 AM on Thu, Dec 17","3:55 PM on Thu, Dec 17",7 hr 5 min,1,$2151,False,typical
+2026-07-15,"China Airlines, China Eastern","8:45 AM on Thu, Dec 17","8:55 PM on Thu, Dec 17",11 hr 10 min,1,Price unavailable,False,typical
