@@ -1,0 +1,50 @@
+query_date,airline,outbound_departure,outbound_arrival,outbound_duration,outbound_stops,round_trip_price,is_best,current_price_level
+2026/7/14,China Airlines,"2:25 PM on Thu, Dec 17","6:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"4:25 PM on Thu, Dec 17","8:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"12:35 PM on Thu, Dec 17","4:35 PM on Thu, Dec 17",3 hr,0,"NT$13,878 ",FALSE,typical
+2026/7/14,EVA Air,"3:20 PM on Thu, Dec 17","7:20 PM on Thu, Dec 17",3 hr,0,"NT$14,726 ",FALSE,typical
+2026/7/14,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,"NT$15,800 ",FALSE,typical
+2026/7/14,China Airlines,"2:25 PM on Thu, Dec 17","6:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"4:25 PM on Thu, Dec 17","8:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"12:35 PM on Thu, Dec 17","4:35 PM on Thu, Dec 17",3 hr,0,"NT$13,878 ",FALSE,typical
+2026/7/14,EVA Air,"3:20 PM on Thu, Dec 17","7:20 PM on Thu, Dec 17",3 hr,0,"NT$14,726 ",FALSE,typical
+2026/7/14,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,"NT$15,800 ",FALSE,typical
+2026/7/14,China Airlines,"2:25 PM on Thu, Dec 17","6:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"4:25 PM on Thu, Dec 17","8:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"12:35 PM on Thu, Dec 17","4:35 PM on Thu, Dec 17",3 hr,0,"NT$13,878 ",FALSE,typical
+2026/7/14,EVA Air,"3:20 PM on Thu, Dec 17","7:20 PM on Thu, Dec 17",3 hr,0,"NT$14,726 ",FALSE,typical
+2026/7/14,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,"NT$15,800 ",FALSE,typical
+2026/7/14,China Airlines,"2:25 PM on Thu, Dec 17","6:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"4:25 PM on Thu, Dec 17","8:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"12:35 PM on Thu, Dec 17","4:35 PM on Thu, Dec 17",3 hr,0,"NT$13,878 ",FALSE,typical
+2026/7/14,EVA Air,"3:20 PM on Thu, Dec 17","7:20 PM on Thu, Dec 17",3 hr,0,"NT$14,726 ",FALSE,typical
+2026/7/14,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,"NT$15,800 ",FALSE,typical
+2026/7/14,China Airlines,"2:25 PM on Thu, Dec 17","6:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"4:25 PM on Thu, Dec 17","8:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"12:35 PM on Thu, Dec 17","4:35 PM on Thu, Dec 17",3 hr,0,"NT$13,878 ",FALSE,typical
+2026/7/14,EVA Air,"3:20 PM on Thu, Dec 17","7:20 PM on Thu, Dec 17",3 hr,0,"NT$14,726 ",FALSE,typical
+2026/7/14,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,"NT$15,800 ",FALSE,typical
+2026/7/14,China Airlines,"2:25 PM on Thu, Dec 17","6:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"4:25 PM on Thu, Dec 17","8:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"12:35 PM on Thu, Dec 17","4:35 PM on Thu, Dec 17",3 hr,0,"NT$13,878 ",FALSE,typical
+2026/7/14,EVA Air,"3:20 PM on Thu, Dec 17","7:20 PM on Thu, Dec 17",3 hr,0,"NT$14,726 ",FALSE,typical
+2026/7/14,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,671 ",FALSE,typical
+2026/7/14,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,"NT$15,800 ",FALSE,typical
+2026/7/14,China Airlines,"2:25 PM on Thu, Dec 17","6:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"4:25 PM on Thu, Dec 17","8:30 PM on Thu, Dec 17",3 hr 5 min,0,"NT$13,609 ",FALSE,typical
+2026/7/14,China Airlines,"12:35 PM on Thu, Dec 17","4:35 PM on Thu, Dec 17",3 hr,0,"NT$13,876 ",FALSE,typical
+2026/7/14,EVA Air,"3:20 PM on Thu, Dec 17","7:20 PM on Thu, Dec 17",3 hr,0,"NT$14,724 ",FALSE,typical
+2026/7/14,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,669 ",FALSE,typical
+2026/7/14,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,"NT$15,669 ",FALSE,typical
+2026/7/14,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,"NT$15,798 ",FALSE,typical
