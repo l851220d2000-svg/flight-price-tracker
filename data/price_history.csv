@@ -95,3 +95,10 @@ query_date,airline,outbound_departure,outbound_arrival,outbound_duration,outboun
 2026-07-15,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,NT$14869,False,typical
 2026-07-15,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,NT$14869,False,typical
 2026-07-15,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,NT$15805,False,typical
+2026-07-16,China Airlines,"2:25 PM on Thu, Dec 17","6:30 PM on Thu, Dec 17",3 hr 5 min,0,NT$13611,False,typical
+2026-07-16,China Airlines,"4:25 PM on Thu, Dec 17","8:30 PM on Thu, Dec 17",3 hr 5 min,0,NT$13611,False,typical
+2026-07-16,China Airlines,"12:35 PM on Thu, Dec 17","4:35 PM on Thu, Dec 17",3 hr,0,NT$13887,False,typical
+2026-07-16,EVA Air,"3:20 PM on Thu, Dec 17","7:20 PM on Thu, Dec 17",3 hr,0,NT$14021,False,typical
+2026-07-16,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,NT$14872,False,typical
+2026-07-16,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,NT$14872,False,typical
+2026-07-16,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,NT$15809,False,typical
