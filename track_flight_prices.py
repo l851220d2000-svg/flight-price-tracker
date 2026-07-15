@@ -6,7 +6,7 @@ import csv
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from fast_flights import FlightData, Passengers, get_flights
+from fast_flights import FlightData, Passengers, TFSData, get_flights_from_filter
 
 
 OUTBOUND_DATE = "2026-12-17"
@@ -16,6 +16,8 @@ TO_AIRPORT = "NRT"
 SEAT = "economy"
 PASSENGERS = 1
 FETCH_MODE = "local"
+CURRENCY = "TWD"
+MAX_STOPS = 0
 TRADITIONAL_AIRLINES = (
     "China Airlines",
     "EVA Air",
@@ -87,30 +89,38 @@ def write_history(rows: list[dict[str, str]]) -> None:
 
 
 def main() -> None:
-    result = get_flights(
-        flight_data=[
-            FlightData(
-                date=OUTBOUND_DATE,
-                from_airport=FROM_AIRPORT,
-                to_airport=TO_AIRPORT,
-            ),
-            FlightData(
-                date=RETURN_DATE,
-                from_airport=TO_AIRPORT,
-                to_airport=FROM_AIRPORT,
-            ),
-        ],
+    flights = [
+        FlightData(
+            date=OUTBOUND_DATE,
+            from_airport=FROM_AIRPORT,
+            to_airport=TO_AIRPORT,
+            max_stops=MAX_STOPS,
+        ),
+        FlightData(
+            date=RETURN_DATE,
+            from_airport=TO_AIRPORT,
+            to_airport=FROM_AIRPORT,
+            max_stops=MAX_STOPS,
+        ),
+    ]
+    flight_filter = TFSData.from_interface(
+        flight_data=flights,
         trip="round-trip",
         seat=SEAT,
         passengers=Passengers(adults=PASSENGERS),
-        fetch_mode=FETCH_MODE,
+        max_stops=MAX_STOPS,
+    )
+    result = get_flights_from_filter(
+        flight_filter,
+        currency=CURRENCY,
+        mode=FETCH_MODE,
     )
 
     price_level = str(result.current_price)
     new_rows = [
         flight_row(flight, price_level)
         for flight in result.flights
-        if is_selected_airline(str(flight.name))
+        if is_selected_airline(str(flight.name)) and int(flight.stops) == MAX_STOPS
     ]
     history = read_history()
     known_rows = {deduplication_key(row) for row in history}
