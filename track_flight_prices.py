@@ -22,7 +22,10 @@ TRADITIONAL_AIRLINES = (
     "China Airlines",
     "EVA Air",
     "Japan Airlines",
+    "JAL",
+    "ANA",
     "All Nippon Airways",
+    "STARLUX",
 )
 
 HISTORY_FILE = Path("data/price_history.csv")
