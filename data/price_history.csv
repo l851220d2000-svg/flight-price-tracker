@@ -164,3 +164,4 @@ query_date,airline,outbound_departure,outbound_arrival,outbound_duration,outboun
 2026-07-19,STARLUX Airlines,"10:10 AM on Thu, Dec 17","2:20 PM on Thu, Dec 17",3 hr 10 min,0,NT$15114,False,typical
 2026-07-19,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,NT$15988,False,typical
 2026-07-19,JAL,"10:55 AM on Thu, Dec 17","2:55 PM on Thu, Dec 17",3 hr,0,NT$17859,False,typical
+2026-07-19,STARLUX Airlines,"10:10 AM on Thu, Dec 17","2:20 PM on Thu, Dec 17",3 hr 10 min,0,NT$16823,False,typical
