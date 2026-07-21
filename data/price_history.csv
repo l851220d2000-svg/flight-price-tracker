@@ -195,3 +195,13 @@ query_date,airline,outbound_departure,outbound_arrival,outbound_duration,outboun
 2026-07-21,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,NT$16214,False,typical
 2026-07-21,STARLUX Airlines,"10:10 AM on Thu, Dec 17","2:20 PM on Thu, Dec 17",3 hr 10 min,0,NT$16813,False,typical
 2026-07-21,JAL,"10:55 AM on Thu, Dec 17","2:55 PM on Thu, Dec 17",3 hr,0,NT$17858,False,typical
+2026-07-22,STARLUX Airlines,"3:00 PM on Thu, Dec 17","7:00 PM on Thu, Dec 17",3 hr,0,NT$12968,True,typical
+2026-07-22,China Airlines,"2:25 PM on Thu, Dec 17","6:30 PM on Thu, Dec 17",3 hr 5 min,0,NT$13457,False,typical
+2026-07-22,China Airlines,"4:25 PM on Thu, Dec 17","8:30 PM on Thu, Dec 17",3 hr 5 min,0,NT$13457,False,typical
+2026-07-22,China Airlines,"12:35 PM on Thu, Dec 17","4:35 PM on Thu, Dec 17",3 hr,0,NT$13721,False,typical
+2026-07-22,EVA Air,"3:20 PM on Thu, Dec 17","7:20 PM on Thu, Dec 17",3 hr,0,NT$13855,False,typical
+2026-07-22,EVA Air,"8:50 AM on Thu, Dec 17","12:55 PM on Thu, Dec 17",3 hr 5 min,0,NT$14706,False,typical
+2026-07-22,China Airlines,"9:30 AM on Thu, Dec 17","1:30 PM on Thu, Dec 17",3 hr,0,NT$15971,False,typical
+2026-07-22,EVA Air,"7:55 AM on Thu, Dec 17","12:00 PM on Thu, Dec 17",3 hr 5 min,0,NT$16207,False,typical
+2026-07-22,STARLUX Airlines,"10:10 AM on Thu, Dec 17","2:20 PM on Thu, Dec 17",3 hr 10 min,0,NT$16806,False,typical
+2026-07-22,JAL,"10:55 AM on Thu, Dec 17","2:55 PM on Thu, Dec 17",3 hr,0,NT$17847,False,typical
