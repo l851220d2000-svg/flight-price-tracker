@@ -1,46 +1,159 @@
-name: Track TPE-NRT Flight Prices
+"""Record selected round-trip TPE-NRT fares from Google Flights.
 
-on:
-  schedule:
-    # 09:17 and 21:17 Taiwan time (UTC+8).
-    - cron: '17 1,13 * * *'
-  workflow_dispatch:
+Tracks multiple return dates (12/22 and 12/23) to compare which is cheaper.
+"""
+from __future__ import annotations
 
-permissions:
-  contents: write
+import csv
+import time
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
-jobs:
-  track-prices:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+from fast_flights import FlightData, Passengers, TFSData, get_flights_from_filter
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+OUTBOUND_DATE = "2026-12-17"
+RETURN_DATES = ["2026-12-22", "2026-12-23"]
+FROM_AIRPORT = "TPE"
+TO_AIRPORT = "NRT"
+SEAT = "economy"
+PASSENGERS = 1
+FETCH_MODE = "local"
+CURRENCY = "TWD"
+MAX_STOPS = 0
+QUERY_DELAY_SECONDS = 10  # 兩次查詢之間的間隔，降低被判定為機器人流量的風險
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+TRADITIONAL_AIRLINES = (
+    "China Airlines",
+    "EVA Air",
+    "Japan Airlines",
+    "JAL",
+    "ANA",
+    "All Nippon Airways",
+    "STARLUX",
+)
 
-      - name: Install Chromium
-        run: playwright install --with-deps chromium
+HISTORY_FILE = Path("data/price_history.csv")
+FIELDNAMES = [
+    "query_date",
+    "outbound_date",
+    "return_date",
+    "airline",
+    "outbound_departure",
+    "outbound_arrival",
+    "outbound_duration",
+    "outbound_stops",
+    "round_trip_price",
+    "is_best",
+    "current_price_level",
+]
 
-      - name: Query flight prices
-        run: python track_flight_prices.py
 
-      - name: Commit and push results
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/price_history.csv
+def query_date() -> str:
+    taipei_time = datetime.now(timezone.utc) + timedelta(hours=8)
+    return taipei_time.date().isoformat()
 
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "Update flight price history"
-            git push
-          fi
+
+def is_selected_airline(name: str) -> bool:
+    return any(airline in name for airline in TRADITIONAL_AIRLINES)
+
+
+def read_history() -> list[dict[str, str]]:
+    if not HISTORY_FILE.exists():
+        return []
+    with HISTORY_FILE.open("r", encoding="utf-8-sig", newline="") as file:
+        rows = list(csv.reader(file))
+    if not rows:
+        return []
+    if rows[0] == FIELDNAMES:
+        return [dict(zip(FIELDNAMES, row)) for row in rows[1:]]
+    return [dict(zip(FIELDNAMES, row)) for row in rows]
+
+
+def flight_row(flight: object, return_date: str, current_price_level: str) -> dict[str, str]:
+    return {
+        "query_date": query_date(),
+        "outbound_date": OUTBOUND_DATE,
+        "return_date": return_date,
+        "airline": str(flight.name),
+        "outbound_departure": str(flight.departure),
+        "outbound_arrival": str(flight.arrival),
+        "outbound_duration": str(flight.duration),
+        "outbound_stops": str(flight.stops),
+        "round_trip_price": str(flight.price or "Price unavailable"),
+        "is_best": str(bool(flight.is_best)),
+        "current_price_level": current_price_level,
+    }
+
+
+def deduplication_key(row: dict[str, str]) -> tuple[str, ...]:
+    return tuple(row[field] for field in FIELDNAMES)
+
+
+def write_history(rows: list[dict[str, str]]) -> None:
+    HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with HISTORY_FILE.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=FIELDNAMES)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def query_one_combination(return_date: str) -> list[dict[str, str]]:
+    """查詢單一「去程 + 回程日期」組合，回傳符合條件的航班列。"""
+    flights = [
+        FlightData(
+            date=OUTBOUND_DATE,
+            from_airport=FROM_AIRPORT,
+            to_airport=TO_AIRPORT,
+            max_stops=MAX_STOPS,
+        ),
+        FlightData(
+            date=return_date,
+            from_airport=TO_AIRPORT,
+            to_airport=FROM_AIRPORT,
+            max_stops=MAX_STOPS,
+        ),
+    ]
+    flight_filter = TFSData.from_interface(
+        flight_data=flights,
+        trip="round-trip",
+        seat=SEAT,
+        passengers=Passengers(adults=PASSENGERS),
+        max_stops=MAX_STOPS,
+    )
+    result = get_flights_from_filter(
+        flight_filter,
+        currency=CURRENCY,
+        mode=FETCH_MODE,
+    )
+    price_level = str(result.current_price)
+    return [
+        flight_row(flight, return_date, price_level)
+        for flight in result.flights
+        if is_selected_airline(str(flight.name)) and int(flight.stops) == MAX_STOPS
+    ]
+
+
+def main() -> None:
+    all_new_rows: list[dict[str, str]] = []
+
+    for index, return_date in enumerate(RETURN_DATES):
+        if index > 0:
+            time.sleep(QUERY_DELAY_SECONDS)
+        rows = query_one_combination(return_date)
+        all_new_rows.extend(rows)
+        print(f"{OUTBOUND_DATE} -> {return_date}: matched {len(rows)} fares")
+
+    history = read_history()
+    known_rows = {deduplication_key(row) for row in history}
+    for row in all_new_rows:
+        key = deduplication_key(row)
+        if key not in known_rows:
+            history.append(row)
+            known_rows.add(key)
+
+    write_history(history)
+    print(f"Recorded {len(all_new_rows)} matching fares; {len(history)} total history rows.")
+
+
+if __name__ == "__main__":
+    main()
